@@ -3,13 +3,11 @@ kind: Service
 metadata:
   name: register-app-service
   labels:
-    app: register-app 
+    app: register-app
 spec:
   selector:
     app: register-app
-
   ports:
-    - port: 8082
-      targetPort: 8082
-
-  type: LoadBalancer
+    - port: 8082       # External port exposed by the service
+      targetPort: 8082 # Port on the pod/container
+  type: NodePort        
